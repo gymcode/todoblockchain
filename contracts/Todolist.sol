@@ -11,10 +11,19 @@ contract TodoList {
         bool complete;
     }
 
+    constructor() public {
+        createTodo("we are creating a blockchain application");
+    }
+
     mapping(uint => Task) public tasks; 
 
     function createTodo(string memory _content) public {
-        
+
+        //TODO: increamenting the taskcount 
+        taskcount++;
+
+        tasks[taskcount] = Task(taskcount, _content, false);
+
     }
 
 
